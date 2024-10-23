@@ -15,14 +15,14 @@ class Main extends React.Component {
     //для передачи props наверх (Search -> Main)
     searchMovie = (searchMov, type = 'all') => {
         this.setState({ loading: true });
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${searchMov}${type !== 'all' ? `&type=${type}` : ""}`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${searchMov}${type !== 'all' ? `&type=${type}` : ""}`)
             .then(response => response.json())
             .then(data => this.setState({ movies: data.Search, loading: false }))
     }
 
     // Search - в componentDidMount - массив из JSON
     componentDidMount() {
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
             .then(response => response.json())
             .then(data => this.setState({ movies: data.Search, loading: false }))
 
