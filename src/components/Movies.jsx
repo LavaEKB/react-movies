@@ -6,7 +6,7 @@ function Movies(props) {
     const { movies = [] } = props;
     // key - обязательный уникальный параметр (требования React).
 
-    // {...<object>} - предоператор. Все ключи объекта отправим вниз
+    // {...<object>} - spread operator. Все ключи объекта отправим вниз
     // чтобы не писать все ключи вручную.
     return <div className="movies">
         {movies.length ? movies.map(movie => (
